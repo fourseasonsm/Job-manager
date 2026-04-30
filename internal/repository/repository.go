@@ -15,7 +15,7 @@ var (
 type JobRepository interface {
 	Save(job model.Job) error
 	GetById(id string) (model.Job, error)
-	GetAll()
+	GetAll() ([]model.Job, error)
 	GetByStatus(status model.Status) ([]model.Job, error)
 	Update(job model.Job) error
 }
