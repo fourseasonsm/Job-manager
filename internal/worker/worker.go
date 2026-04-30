@@ -48,7 +48,7 @@ func (w *Worker) process(ctx context.Context, jobId string) {
 	job.StartedAt = now
 	w.repo.Update(job)
 
-	slog.Info("worker: processing job", "job_id", jobId, "type", "worker_id", w.id)
+	slog.Info("worker: processing job", "job_id", jobId, "worker_id", w.id)
 
 	duration := time.Duration(1+rand.Intn(5)) * time.Second
 	select {
